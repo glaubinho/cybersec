@@ -1,0 +1,90 @@
+#include<iostream>
+#include<locale.h>
+#include<string.h>
+#include <stdlib.h>
+using namespace std;
+
+int main(){
+	
+					setlocale(LC_ALL,"portuguese");
+					
+float valprod, imp;
+int imposto; 
+char opc;
+
+//RETORNO
+inicio:
+
+system("cls");
+
+	cout<<"\t Digite o valor do produto: R$";
+	cin>>valprod; 
+	
+		cout<<"\n" "\n\t IMPOSTO POR ESTADO! \n\t (1)-Sao Paulo \n\t (2)-Minas Gerais \n\t (3)-Rio de Janeiro \n\t (4)-Roraima \n\t (5)-Acre \n\r""\n" "\t (6)-Sem Imposto"<<"\n";
+	
+	 
+	cout<<"\n\t Digite código do imposto:";
+	cin>>imposto;
+	//Começo chaveamento
+	
+	if(valprod<=200)
+		{
+	
+			switch(imposto)	
+			{
+				case 1: cout<<"\n" "\t Estado de Sao Paulo \n" "\t Imposto 20%"<<"\n""\t R$"<<valprod*1.20<<"\n";
+					break;
+				case 2: cout<<"\n" "\t Estado de Minas Gerais \n" "\t Imposto 15%"<<"\n""\t R$"<<valprod*1.15<<"\n";
+					break;
+				case 3: cout<<"\n" "\t Estado do Rio de Janeiro \n" "\t Imposto 10%"<<"\n""\t R$"<<valprod*1.10<<"\n";
+					break;
+				case 4: cout<<"\n" "\t Estado de Roraima \n" "\t Imposto 8%"<<"\n""\t R$"<<valprod*1.08<<"\n\r";
+					break;
+				case 5: cout<<"\n" "\t Estado do Acre \n" "\t Imposto 5%"<<"\n""\t R$"<<valprod*1.05<<"\n\r";
+					break;
+				case 6: cout<<"\t Produto Isento de Imposto!"<<"\n"<<"\t R$"<<valprod<<"\n";
+					break;
+			default: cout<<"\n\t Código invalido"<<"\n";					
+			}				
+		}
+	else
+	{
+	
+		cout<<"\n" "\t Valor do produto acima de R$200,00. \n";
+			switch(imposto)	
+			{
+				case 1: cout<<"\n" "\t Estado de Sao Paulo \n" "\t Imposto 30%"<<"\n""\t R$"<<valprod*1.30<<"\n";
+					break;
+				case 2: cout<<"\n" "\t Estado de Minas Gerais \n" "\t Imposto 10%"<<"\n""\t R$"<<valprod*1.10<<"\n";
+					break;
+				case 3: cout<<"\n" "\t Estado do Rio de Janeiro \n" "\t Imposto 18%"<<"\n""\t R$"<<valprod*1.18<<"\n";
+					break;
+				case 4: cout<<"\n" "\t Estado de Roraima \n" "\t Imposto 16%"<<"\n""\t R$"<<valprod*1.16<<"\n\r";
+					break;
+				case 5: cout<<"\n" "\t Estado do Acre \n" "\t Imposto 7%"<<"\n""\t R$"<<valprod*1.07<<"\n\r";
+					break;
+				case 6: cout<<"\t Produto Isento de Imposto!"<<"\n"<<"\t R$"<<valprod<<"\n";
+					break;
+			default: cout<<"\n\t Código invalido"<<"\n";					
+			}
+		}
+		
+
+		//RETORNAR AO INICO. 
+					{
+
+						cout << "\n\n\n \t Deseja consultar outro produto? [S/N]: ";
+						cin >> opc;
+					}
+							if(opc == 's' or opc=='S'){
+
+								goto inicio;
+
+							}else (opc != 's' && opc != 'n' or opc != 'S' && opc != 'N');
+
+								cout << "\n \t\t SISTEMA ENCERRADO!";
+								
+		
+		return 0; 			
+					
+}
